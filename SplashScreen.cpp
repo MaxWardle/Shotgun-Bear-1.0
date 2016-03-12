@@ -1,5 +1,6 @@
 #include "stdAfx.h"
 #include "SplashScreen.h"
+#include "Game.h"
 
 
 void SplashScreen::Show(sf::RenderWindow& window){
@@ -21,18 +22,18 @@ void SplashScreen::Show(sf::RenderWindow& window){
 	sf::Texture intro10;
 	sf::Texture intro11;
 	sf::Texture black;
-	intro1.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro1.png");
-	intro2.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro2.png");
-	intro3.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro3.png");
-	intro4.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro4.png");
-	intro5.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro5.png");
-	intro6.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro6.png");
-	intro7.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro7.png");
-	intro8.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro8.png");
-	intro9.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro9.png");
-	intro10.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro10.png");
-	intro11.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/intro11.png");
-	black.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/Black.png");
+	intro1.loadFromFile("\../Pictures/intro1.png");
+	intro2.loadFromFile("\../Pictures/intro2.png");
+	intro3.loadFromFile("\../Pictures/intro3.png");
+	intro4.loadFromFile("\../Pictures/intro4.png");
+	intro5.loadFromFile("\../Pictures/intro5.png");
+	intro6.loadFromFile("\../Pictures/intro6.png");
+	intro7.loadFromFile("\../Pictures/intro7.png");
+	intro8.loadFromFile("\../Pictures/intro8.png");
+	intro9.loadFromFile("\../Pictures/intro9.png");
+	intro10.loadFromFile("\../Pictures/intro10.png");
+	intro11.loadFromFile("\../Pictures/intro11.png");
+	black.loadFromFile("\../Pictures/Black.png");
 
 	//creating sprites and settign textures
 	sf::Sprite frame1;
@@ -61,7 +62,7 @@ void SplashScreen::Show(sf::RenderWindow& window){
 	frame12.setTexture(black);
 
 	sf::Font font;
-	if (!font.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Fonts/Disposeable Droid/DisposableDroidBB.otf")){
+	if (!font.loadFromFile("\../Fonts/Disposeable Droid/DisposableDroidBB.otf")){
 		return;
 	}
 
@@ -76,14 +77,14 @@ void SplashScreen::Show(sf::RenderWindow& window){
 	text1.setString("A LEGEND WAS BORN");
 	text2.setString("THE LEGEND OF");
 
-	text.setCharacterSize(200);
-	text1.setCharacterSize(200);
-	text2.setCharacterSize(200);
+	text.setCharacterSize(100);
+	text1.setCharacterSize(100);
+	text2.setCharacterSize(100);
 
 	//center the text
-	text.setPosition(1280-(text.getLocalBounds().width / 2), 260);
-	text1.setPosition(1280-(text1.getLocalBounds().width / 2), 620);
-	text2.setPosition(1280-(text2.getLocalBounds().width / 2), 980);
+	text.setPosition(Game::SCREEN_WIDTH / 2 - (text.getLocalBounds().width / 2), 130);
+	text1.setPosition(Game::SCREEN_WIDTH / 2 - (text1.getLocalBounds().width / 2), 310);
+	text2.setPosition(Game::SCREEN_WIDTH / 2 - (text2.getLocalBounds().width / 2), 490);
 
 	//displaying frame 1
 	window.draw(frame1);

@@ -3,11 +3,16 @@
 #include "MainMenu.h"
 #include "SplashScreen.h"
 
+
 bool Game::leftPressed;
 bool Game::rightPressed;
 bool Game::upPressed;
 bool Game::fPressed;
 bool Game::rPressed;
+
+//for drawing background
+sf::Texture backgroundTexture;
+sf::Sprite background;
 
 void Game::Start(void){
 
@@ -29,13 +34,17 @@ void Game::Start(void){
 
 	//create ponter to instance of Player class, *player1, and set inital position of player1's sprite
 	Player *player1 = new Player((float)SCREEN_WIDTH / 2, (float)GROUND);
-	player1 -> Load("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/Bear.png");
+	player1 -> Load("\../Pictures/BearWalkRight1.png");
 
 	// add visual game objects to object manager
 	_gameObjectManager.Add("ShotgunBear", player1);
 
 	// show splash screen first
 	_gameState = Game::ShowingSplash;
+
+	//Load Game Background
+	backgroundTexture.loadFromFile("\../Pictures/Background.png");
+	background.setTexture(backgroundTexture);
 
 	// while window is not being closed, stay in game loop
 	while (!IsExiting()){
@@ -97,6 +106,7 @@ void Game::GameLoop(){
 
 			// update all sprites
 			_mainWindow.clear(sf::Color::Black);
+			_mainWindow.draw(background);
 			_gameObjectManager.UpdateAll();
 			_gameObjectManager.DrawAll(_mainWindow);
 			_mainWindow.display();
@@ -120,9 +130,6 @@ void Game::GameLoop(){
 				}
 				// note: add if 'f' is pressed set fire vaiable to 1 else 0
 				// note: add if 'r' is pressed set reload variable to 1 else 0
-				
-				_gameObjectManager.UpdateAll();
-				_gameObjectManager.DrawAll(_mainWindow);
 			}
 
 			// check if keys are released
@@ -138,8 +145,6 @@ void Game::GameLoop(){
 				if (currentEvent.key.code == sf::Keyboard::Up){
 					upPressed = false;
 				}
-				_gameObjectManager.UpdateAll();
-				_gameObjectManager.DrawAll(_mainWindow);
 			}
 
 			break;

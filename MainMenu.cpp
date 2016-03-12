@@ -6,8 +6,8 @@ MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window){
 	//Load textures from files
 	sf::Texture mainMenu;
 	sf::Texture anyKey;
-	mainMenu.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/MainMenu.png");
-	anyKey.loadFromFile("C:/Users/Max/Documents/Visual Studio 2013/Projects/ShotgunBear/Pictures/Play.png");
+	mainMenu.loadFromFile("\../Pictures/MainMenu.png");
+	anyKey.loadFromFile("\../Pictures/Play.png");
 
 	//create sprites and set textures
 	sf::Sprite menu;
@@ -16,7 +16,7 @@ MainMenu::MenuResult MainMenu::Show(sf::RenderWindow& window){
 	play.setTexture(anyKey);
 
 	// set position of play sprite
-	int playPosX = 1500; int playPosY = 1000;
+	int playPosX = 750; int playPosY = 500;
 	play.setPosition(playPosX, playPosY);
 
 	//display sprites

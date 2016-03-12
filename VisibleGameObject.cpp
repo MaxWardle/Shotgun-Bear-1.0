@@ -16,12 +16,10 @@ void VisibleGameObject::Load(std::string filename){
 	if (_texture.loadFromFile(filename) == false){
 		_filename = "";
 		_isLoaded = false;
-		printf("the image was NOT loaded\n");
 	}else{
 		_filename = filename;
 		_sprite.setTexture(_texture);
 		_isLoaded = true;
-		printf("the image was loaded\n");
 	}
 }
 
@@ -38,10 +36,6 @@ void VisibleGameObject::Update(float elapsedTime){
 void VisibleGameObject::SetPosition(float x, float y){
 	if (_isLoaded){
 		_sprite.setPosition(x, y);
-		printf("the position was set with coordinates: (%d, %d)\n", x, y);
-	}
-	else{
-		printf("the position was NOT set\n");
 	}
 }
 

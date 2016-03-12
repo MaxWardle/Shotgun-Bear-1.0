@@ -16,7 +16,10 @@ public:
 	float GetXVelocity() const;
 
 private:
+	int counter; // used to toggle walking textures
+
 	bool inAir; // if jumping, true, if on ground, false
+	bool movingRight; //if moving right, true, if moving left, false
 
 	float _xAccel; //-- left, ++ right
 	float _yAccel; // -- up, ++ down

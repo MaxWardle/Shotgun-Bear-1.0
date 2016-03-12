@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -11,10 +12,13 @@ public:
 	static void Start();
 	static sf::RenderWindow& GetWindow();
 	
-	const static int SCREEN_WIDTH = 2560;
-	const static int SCREEN_HIGHT = 1440;
-	const static int GROUND = 1100;
+	const static int SCREEN_WIDTH = 1280;
+	const static int SCREEN_HIGHT = 720;
+	const static int GROUND = 720;
 	const static int FRAME_RATE = 60;
+
+	const static int directoryBuff = 200;
+	static std::string currentDirectory;
 
 	// key states
     static bool rightPressed;

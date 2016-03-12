@@ -4,6 +4,7 @@
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
 #include "time.h"
+#include "Game.h"
 #pragma once
 class SplashScreen{
 public:
